@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>29 Card Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>29 Card Game</h1>
+        <p id="status">Waiting for players...</p>
+        <p>Players: <span id="player-count">0</span>/4</p>
+        
+        <div id="scoreboard">
+            <div class="team-box"><h3>Team A</h3><p>Pts: <span id="score-a">0</span></p><p>Game: <span id="gp-a">0</span></p></div>
+            <div class="info-box"><p>Target: <span id="bid-target">--</span></p><p>Bidder: <span id="bid-team">--</span></p></div>
+            <div class="team-box"><h3>Team B</h3><p>Pts: <span id="score-b">0</span></p><p>Game: <span id="gp-b">0</span></p></div>
+        </div>
+
+        <div id="table"></div>
+        <div id="my-hand"></div>
+
+        <div class="controls">
+            <button onclick="claimPair()">Claim Pair (+4)</button>
+        </div>
+
+        <div id="chat-container">
+            <div id="chat-box"></div>
+            <input type="text" id="chat-input" placeholder="Chat..." onkeydown="if(event.key==='Enter') sendChat()">
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
